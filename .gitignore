@@ -8,8 +8,8 @@ media
 static/admin
 templates/landing
 .idea
-#settings.py
-#bbank/settings.py
+settings.py
+bbank/settings.py
 
 # Backup files #
 *.bak
@@ -23,7 +23,7 @@ templates/landing
 .idea/**/shelf
 
 # Environments
-#.env
+.env
 .venv
 env/
 venv/
