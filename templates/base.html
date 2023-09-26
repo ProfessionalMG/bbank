@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-********" crossorigin="anonymous"/>
+
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="container mx-auto">
+    {% include 'messages.html' %}
+    {% block content %}
+    {% endblock content %}
+
+</div>
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>

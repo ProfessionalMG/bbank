@@ -1,0 +1,8 @@
+{% for message in messages %}
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <span class="block sm:inline">{{ message }}</span>
+        <button type="button" data-dismiss="alert" aria-label="Close" class="absolute top-0 bottom-0 right-0 px-4 py-3"><span
+                aria-hidden="True"><i
+                class="fas fa-x"></i></span></button>
+    </div>
+{% endfor %}

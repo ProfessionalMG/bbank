@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="relative mb-4">
+                <label for="{{ form.email.id_for_label }}" class="leading-7 text-sm text-gray-600">Email</label>
+                <input type="email" id="{{ form.email.id_for_label }}" name="{{ form.email.html_name }}"
+                       placeholder="enter your email"
+                       class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+                <label for="{{ form.password.id_for_label }}" class="leading-7 text-sm text-gray-600">Password</label>
+                <input type="password" id="{{ form.password.id_for_label }}" name="{{ form.password.html_name }}"
+                       placeholder="enter your password"
+                       class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            {% if form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ form.email.errors }}
+                </div>
+            {% endif %}
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    type="submit">
+                Login
+            </button>
+
+        </form>
+        <p class="text-gray-500 mt-3">Don't have an account ? <a href="{% url 'registration' %}">Sign Up Here</a>
+        </p>
+    </div>
+{% endblock %}

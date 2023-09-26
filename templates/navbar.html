@@ -1,0 +1,35 @@
+<header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+            {#            <a class="mr-5 hover:text-gray-900">First Link</a>#}
+            {#            <a class="mr-5 hover:text-gray-900">Second Link</a>#}
+            {#            <a class="mr-5 hover:text-gray-900">Third Link</a>#}
+            {#            <a class="hover:text-gray-900">Fourth Link</a>#}
+        </nav>
+        <a href="{% url 'home' %}"
+           class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+            <span class="ml-3 text-xl">BBank</span>
+        </a>
+        <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}"
+                   class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+                    <span class="mr-2">Logout</span>
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+
+            {% else %}
+                <a href="{% url 'login' %}"
+                   class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+                    <span class="mr-2">Login</span>
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+                <a href="{% url 'registration' %}"
+                   class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ml-2">
+                    <span class="mr-2">Sign Up</span>
+                    <i class="fas fa-user-plus"></i>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</header>

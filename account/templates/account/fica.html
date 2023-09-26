@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>FICA Verification</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="{{ form.id_doc.id_for_label }}" class="block text-sm font-medium text-gray-700">ID</label>
+            <input type="file" name="{{ form.id_doc.html_name }}" id="{{ form.id_doc.id_for_label }}"
+                   class="mt-1 p-2 border rounded-md">
+        </div>
+        <div class="mb-4">
+            <label for="{{ form.proof_of_res.id_for_label }}" class="block text-sm font-medium text-gray-700">Proof of
+                Residence</label>
+            <input type="file" name="{{ form.proof_of_res.html_name }}" id="{{ form.proof_of_res.id_for_label }}"
+                   class="mt-1 p-2 border rounded-md">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock content %}

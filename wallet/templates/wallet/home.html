@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap">
+            <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Welcome to BBank</h2>
+            <div class="md:w-3/5 md:pl-6">
+                <p class="leading-relaxed text-base">Where the money is plenty and the service is good. Bank with us
+                    because we be the best. That's BBank</p>
+                <div class="flex md:mt-4 mt-6">
+                    <a href="{% url 'registration' %}"
+                       class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">
+                        Sign Up
+                    </a>
+                    <a class="text-indigo-500 inline-flex items-center ml-4"><span class="mr-2">Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
